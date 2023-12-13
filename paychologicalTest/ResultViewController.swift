@@ -11,14 +11,33 @@ class ResultViewController: UIViewController {
 
     var score: Int!
     
+    @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var showScore: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showScore.text = "\(score!)"
+        updateUI()
         // Do any additional setup after loading the view.
     }
+
+    
+    func updateUI() {
+        if score >= 8 && score <= 16{
+            showScore.text = testResult[0]
+            resultImage.image = UIImage(named: "result1")
+        }else if score >= 17 && score <= 24{
+            showScore.text = testResult[1]
+            resultImage.image = UIImage(named: "result2")
+        }else if score >= 25 && score <= 32{
+            showScore.text = testResult[2]
+            resultImage.image = UIImage(named: "result3")
+        }else{
+            showScore.text = testResult[3]
+            resultImage.image = UIImage(named: "result4")
+        }
+    }
+    
     
 
     /*

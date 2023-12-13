@@ -26,6 +26,7 @@ class QuestionViewController: UIViewController {
     
     var score = 0
     var numberOfTest = 0
+    let newTest = allQuestionOptions.shuffled()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,78 +35,55 @@ class QuestionViewController: UIViewController {
         updateUI()
         
     }
-    
-    @IBAction func getOne(_ sender: Any) {
-        score += 1
-    }
-    @IBAction func getTwo(_ sender: Any) {
-        score += 2
-    }
-    @IBAction func getThree(_ sender: Any) {
-        score += 3
-    }
-    @IBAction func getFour(_ sender: Any) {
-        score += 4
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     //選擇完選項後，記錄第幾題加1，累積分數，並且更新UI
     @IBAction func chooseOption(_ sender: Any) {
         getScore(sender as! UIButton)
-        numberOfTest += 1
         updateUI()
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     func updateUI() {
-        guard numberOfTest < 4 else {
-            performSegue(withIdentifier: "showScore", sender: nil)
-            return
+        numberOfTest += 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+            
+            guard self.numberOfTest <= 10 else {
+                self.performSegue(withIdentifier: "showScore", sender: nil)
+                return
+            }
+            //問peter為何這樣就要加self
+            self.question.text = "\(self.numberOfTest). "+self.newTest[self.numberOfTest].question
+            self.option1.text = self.newTest[self.numberOfTest].options[1]
+            self.option2.text = self.newTest[self.numberOfTest].options[2]
+            self.option3.text = self.newTest[self.numberOfTest].options[3]
+            self.option4.text = self.newTest[self.numberOfTest].options[4]
         }
-        question.text = allQuestionOption[numberOfTest].question
-        option1.text = allQuestionOption[numberOfTest].options[1]
-        option2.text = allQuestionOption[numberOfTest].options[2]
-        option3.text = allQuestionOption[numberOfTest].options[3]
-        option4.text = allQuestionOption[numberOfTest].options[4]
+       
     }
     
     func getScore(_ sender: UIButton) {
-        if sender == button1 {
+        switch sender {
+        case button1:
+            option1.backgroundColor = .red
             score += 1
-        } else if sender == button2 {
+        case button2:
+            option2.backgroundColor = .red
             score += 2
-        }else if sender == button3 {
+        case button3:
+            option3.backgroundColor = .red
             score += 3
-        }else {
+        case button4:
+            option4.backgroundColor = .red
             score += 4
+        default:
+            option4.backgroundColor = .red
+            score += 0
         }
-                    
-                    
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+            self.option1.backgroundColor = .clear
+            self.option2.backgroundColor = .clear
+            self.option3.backgroundColor = .clear
+            self.option4.backgroundColor = .clear
+        }
         
     }
     

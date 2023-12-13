@@ -1,53 +1,33 @@
-//
-//  QuestionAns.swift
-//  paychologicalTest
-//
-//  Created by stu on 2023/12/10.
-//
-
-//import Foundation
-//
-//struct Question{
-//    var question: String
-//    var options: [String]
-//}
-//
-//var allQuestionOptions = [
-//    Question(question: "1. 他/她是否經常取消約會？", options: ["","A. 從未取消", "B. 偶爾取消，但總是有合理理由", "C. 經常取消，理由讓人懷疑", "D. 經常取消，並且理由荒謬不合理"]),
-//
-//]
-
-//init(question: String, options: [String]) {
-//    self.question = question
-//    self.options = options
-//}
-
-
-struct QuestionOptions{
-    var question:String
-    var options:[String]
+struct QuestionOptions {
+    var question: String
+    var options: [String]
     
     init(question: String, options: [String]) {
         self.question = question
         self.options = options
     }
-    
 }
 
-let allQuestionOption:[QuestionOptions] = [
-    QuestionOptions(question: "1. 他/她是否經常取消約會？", options: ["", "A. 從未取消", "B. 偶爾取消，但總是有合理理由", "C. 經常取消，理由讓人懷疑", "D. 經常取消，並且理由荒謬不合理"]),
-    QuestionOptions(question: "2. 他/她是否常常對其他異性表示特別的關心？", options: ["", "A. 他只有和我互動", "B. 偶爾對其他人表示關心，但我感到無礙", "C. 他總是對其他異性表示關心，讓我感到不安", "D. 他對其他異性的關心讓我感到明顯不滿"]),
-    QuestionOptions(question: "3. 他/她是否經常在不解釋的情況下消失？", options: ["", "A. 從未發生", "B. 有時會突然消失，但總是有解釋", "C. 經常不告而別，讓我感到困擾", "D. 他經常無故消失，讓我感到非常沮喪"]),
-    QuestionOptions(question: "4. 他/她是否經常對你的感受不敏感？", options: ["", "A. 他總是很關心我的感受", "B. 有時候可能不夠敏感，但能夠理解", "C. 他經常忽略我的感受，讓我感到受傷", "D. 他對我的感受毫不在意，讓我感到受到冷落"])
-]
+let allQuestionOptions: [QuestionOptions] = [
+    QuestionOptions(question: "他是否經常取消約會？", options: ["", "A. 從未取消", "B. 偶爾取消，但總是有合理理由", "C. 經常取消，理由讓人懷疑", "D. 經常取消，並且理由荒謬不合理"]),
+    QuestionOptions(question: "他是否常常對其他異性表示特別的關心？", options: ["", "A. 他只有和我互動", "B. 偶爾對其他人表示關心，但我感到無礙", "C. 他總是對其他異性表示關心，讓我感到不安", "D. 他對其他異性的關心讓我感到明顯不滿"]),
+    QuestionOptions(question: "他是否經常在不解釋的情況下消失？", options: ["", "A. 從未發生", "B. 有時會突然消失，但總是有解釋", "C. 經常不告而別，讓我感到困擾", "D. 他經常無故消失，讓我感到非常沮喪"]),
+    QuestionOptions(question: "他是否經常對你的感受不敏感？", options: ["", "A. 他總是很關心我的感受", "B. 有時候可能不夠敏感，但能夠理解", "C. 他經常忽略我的感受，讓我感到受傷", "D. 他對我的感受毫不在意，讓我感到受到冷落"]),
+    QuestionOptions(question: "他是否經常對你批評挑剔？", options: ["", "A. 他從不對我挑剔", "B. 有時候會提建議，但不是很嚴厲", "C. 他經常對我挑剔，令我感到困擾", "D. 他對我挑剔到令人無法忍受的地步"]),
+    QuestionOptions(question: "他是否對你的個人空間缺乏尊重？", options: ["", "A. 他總是尊重我的個人空間", "B. 有時候可能會有些侵入，但不嚴重", "C. 他經常不尊重我的個人空間，讓我感到不舒服", "D. 他對我的個人空間毫不在意，經常侵犯"]),
+    QuestionOptions(question: "他是否經常撒謊或隱瞞事實？", options: ["", "A. 從不撒謊，誠實為本", "B. 有時可能為了保護我而隱瞞，但不算撒謊", "C. 他經常撒謊，讓我感到無法信任", "D. 他習慣性地隱瞞事實，導致我對他失去信心"]),
+    QuestionOptions(question: "他是否對你的成就感到嫉妒？", options: ["", "A. 他總是為我的成就感到高興", "B. 有時候會感到一點點嫉妒，但不是很明顯", "C. 他經常表現出嫉妒的情緒，令我感到不悅", "D. 他對我的成功充滿嫉妒，並試圖貶低我"]),
+    QuestionOptions(question: "他是否總是期望你按照他的期望行事？", options: ["", "A. 他尊重我的自主性，不強求我", "B. 有時可能會有一些期望，但不是強迫的", "C. 他經常期望我按照他的方式行事，讓我感到壓力", "D. 他強迫我完全按照他的期望行事，不給我自主性"]),
+    QuestionOptions(question: "他是否總是將責任推卸給別人？", options: ["", "A. 他總是對自己的行為負責", "B. 偶爾可能會推卸，但會檢討並改正", "C. 他經常將責任推卸給別人，不擅長承擔後果", "D. 他總是將錯誤歸咎於他人，不願意檢討自己"]),
+    QuestionOptions(question: "他是否經常使用侮辱性的言語對待你？", options: ["", "A. 從不使用冒犯性言論", "B. 有時表現不耐煩，但從不侮辱", "C. 他經常使用冒犯性言論，讓我感到受辱", "D. 他總是以侮辱性的言語對待我，讓我感到非常受傷"]),
+    QuestionOptions(question: "他是否容易被情緒左右，導致不穩定的行為？", options: ["", "A. 他通常能夠保持冷靜，不容易受情緒左右", "B. 有時會情緒波動，但不嚴重影響行為", "C. 他經常因情緒而行為不穩定，讓我難以預測", "D. 他的行為完全受情緒左右，讓我感到困擾"]),
+    QuestionOptions(question: "他是否經常嘗試控制你的生活和社交？", options: ["", "A. 他尊重我的自由，從不嘗試控制", "B. 有時可能會有一些建議，但不是強制的", "C. 他經常嘗試控制我的生活和社交，讓我感到窒息", "D. 他極力控制我的一切，讓我喘不過氣"]),
+    QuestionOptions(question: "他是否總是挑剔你的外表和行為？", options: ["", "A. 他從不挑剔我的外表和行為", "B. 偶爾提一些建議，但不挑剔", "C. 他經常挑剔我的外表和行為，讓我感到自卑", "D. 他總是以挑剔的態度看待我的一切"]),
+    QuestionOptions(question: "他是否對你的家人和朋友表現出不尊重的態度？", options: ["", "A. 他尊重並愛護我身邊的人", "B. 偶爾可能會有些瑕疵，但大體上尊重", "C. 他對我的家人和朋友不禮貌，讓我感到困擾", "D. 他經常展現不尊重的態度，讓我感到難堪"]),
+    QuestionOptions(question: "他是否經常忽略你的需求和感受？", options: ["", "A. 他總是關心我的需求和感受", "B. 有時可能會忽略，但會主動道歉", "C. 他經常忽略我的需求和感受，讓我感到被忽視", "D. 他從不考慮我的需求和感受，完全不在意"]),
+    QuestionOptions(question: "他是否經常對你進行心理或情感的虐待？", options: ["", "A. 從不進行心理或情感虐待", "B. 有時可能會有一點點，但會反省", "C. 他經常進行心理或情感虐待，讓我感到受害", "D. 他習慣性地進行心理或情感虐待，讓我感到崩潰"]),
+    QuestionOptions(question: "他是否經常對你進行物理上的虐待？", options: ["", "A. 從不進行物理上的虐待", "B. 偶爾可能會有一些爭執，但不涉及物理虐待", "C. 他經常進行物理上的虐待，讓我感到害怕", "D. 他習慣性地進行物理上的虐待，讓我感到危險"]),
+    QuestionOptions(question: "他是否經常否定你的價值和自尊心？", options: ["", "A. 他從不否定我的價值和自尊心", "B. 偶爾可能會有一些分歧，但尊重我的價值", "C. 他經常否定我的價值和自尊心，令我感到沮喪", "D. 他習慣性地否定我的價值和自尊心，讓我感到自卑"]),
+    QuestionOptions(question: "他是否總是尋找機會進行控制和操控你？", options: ["", "A. 他從不尋找機會進行控制和操控", "B. 有時可能會有一些控制，但不是常態", "C. 他經常尋找機會進行控制和操控，讓我感到束縛", "D. 他習慣性地進行控制和操控，完全不給我自由"]) ]
 
-
-
-
-
-//func addText() {
-//    questionOption1.question = "1. 他/她是否經常取消約會？"
-//    questionOption1.options = ["","A. 從未取消", "B. 偶爾取消，但總是有合理理由", "C. 經常取消，理由讓人懷疑", "D. 經常取消，並且理由荒謬不合理"]
-//}
-    
-
+let testResult: [String] = ["相對正常，可能有一些小問題，但整體上是一個不錯的伴侶。", "有一些渣男/渣女特質，需要謹慎觀察和解決問題。", "渣男/渣女傾向明顯，建議嚴肅對待並謹慎考慮未來。", "極度嚴重的渣男/渣女行為，建議儘早結束關係，保護自己的心靈健康。"]
